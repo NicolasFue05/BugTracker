@@ -1,7 +1,7 @@
 import { Router } from 'express'
+import { HomeController } from '../controllers/homeController.js'
 
+const homeControl = new HomeController()
 export const homeRouter = Router()
 
-homeRouter.get('/', (request, respond) => {
-  respond.json({ message: 'Home Page!' })
-})
+homeRouter.get('/', homeControl.getInfo)
